@@ -8,14 +8,7 @@ Module Matts_Utility_Module
 
     Public Function get_file_extension(ByVal file_path As String) As String
 
-        Dim temp_string As String
-        Dim length_of_extension As Integer
-
-        length_of_extension = InStrRev(file_path, ".")
-        length_of_extension = Len(file_path) - length_of_extension + 1 '+ 1 to include the dot.
-        temp_string = Microsoft.VisualBasic.Right(file_path, length_of_extension)
-
-        get_file_extension = temp_string
+        get_file_extension = System.IO.Path.GetExtension(file_path)
 
     End Function
 
